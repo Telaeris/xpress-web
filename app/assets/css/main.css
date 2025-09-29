@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "vue-toastification/dist/index.css";
+
+@plugin "@headlessui/tailwindcss";
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-dark-blue: #3f4f62;
+    --color-main-blue: #226686;
+    --color-primary: #006990;
+    --color-primary-hover: #0082b2;
+    --color-main-gray: #666666;
+    --color-gray-hover: #9c9c9c;
+    --color-link: #006990;
+    --color-yellow: #ffde00;
+    --color-orange: #f78e1e;
+    --color-main-red: #e31b23;
+    --color-red-hover: #c8191f;
+    --color-label: #3f7596;
+}
+
+@layer base {
+    [data-theme=xpt] {
+        --color-dark-blue: #3f4f62;
+        --color-main-blue: #226686;
+        --color-primary-hover: #337ab7;
+        --color-primary: #3f8ed2;
+        --color-main-gray: #757575;
+        --color-gray-hover: #9c9c9c;
+        --color-link: #337ab7;
+        --color-yellow: #ffde00;
+        --color-orange: #f78e1e;
+        --color-main-red: #e31b23;
+        --color-red-hover: #c8191f;
+        --color-label: #7792b1;
+    }
+
+    [data-theme=xpe] {
+        --color-dark-blue: #122632;
+        --color-main-blue: #006990;
+        --color-primary-hover: #006990;
+        --color-primary: #0082b2;
+        --color-main-gray: #666666;
+        --color-gray-hover: #9c9c9c;
+        --color-link: #006990;
+        --color-yellow: #ffde00;
+        --color-orange: #f78e1e;
+        --color-main-red: #e31b23;
+        --color-red-hover: #c8191f;
+        --color-label: #3f7596;
+    }
+}
+
+body {
+    font-family: 'Figtree', sans-serif !important;
+    font-weight: 700;
+}
+
+.Vue-Toastification__toast {
+    font-family: 'Figtree', sans-serif !important;
+    font-weight:500;
+}

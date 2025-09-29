@@ -1,0 +1,15 @@
+:root {
+    --xp-dark-blue: #122632;
+    --xp-blue: #006990; 
+    --xp-primary: #006990;
+    --xp-primary-hover: #0082b2;
+    --xp-light-hover: #bfe0f7;
+    --xp-gray: #666666; 
+    --xp-gray-hover: #9c9c9c; 
+    --xp-link: #006990;
+    --xp-yellow: #ffde00; 
+    --xp-orange: #f78e1e;
+    --xp-red: #e31b23; 
+    --xp-red-hover: #c8191f; 
+    --xp-label: #3f7596;
+}

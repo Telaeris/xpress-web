@@ -1,0 +1,9 @@
+{
+    "welcome": "Welcome, {name}!",
+    "users": "Users",
+    "companies": "Companies",
+    "zones": "Zones",
+    "doors": "Doors",
+    "readers": "Readers",
+    "entry_exit": "Occupancy"
+}

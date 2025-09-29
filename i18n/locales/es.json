@@ -1,0 +1,9 @@
+{
+    "welcome": "¡Bienvenido, {name}!",
+    "users": "Usuarios",
+    "companies": "Empresas",
+    "zones": "Zonas",
+    "doors": "Puertas",
+    "readers": "Lectores",
+    "entry_exit": "Ocupación"
+}
