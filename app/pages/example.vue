@@ -9,8 +9,9 @@
             <FormTextInput label="Another Input" v-model="formData.text_2" 
                 placeholder="Enter another input" colWidth="quarter"/>
             <FormComboBox label="Ex. Select (Users)" v-model="formData.combo_1" 
-                placeholder="Select an option" colWidth="half" 
-                search="users"/>
+                placeholder="Select an option" colWidth="half" search="users"/>
+            <FormTextInput label="Example Date" v-model="formData.date" 
+                colWidth="quarter" type="date"/>
         </FormGrid>
     </FormBase>
 </template>
@@ -23,5 +24,6 @@ const formData = ref<Record<string, any>>({
         id: null,
         name: null,
     },
+    date: '',
 });
 </script>
