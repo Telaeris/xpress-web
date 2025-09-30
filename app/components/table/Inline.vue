@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { type ColumnDef, type TableOptionsWithReactiveData, type SortingState,
-    getCoreRowModel, getSortedRowModel, useVueTable } from "@tanstack/vue-table";
+    getCoreRowModel, useVueTable } from "@tanstack/vue-table";
 
 const props = defineProps<{
     columns: ColumnDef<Record<string, any>, any>[],
