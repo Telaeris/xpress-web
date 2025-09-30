@@ -3,15 +3,6 @@ import CompaniesForm from "~/forms/CompaniesForm.vue";
 import DoorsForm from "~/forms/DoorsForm.vue";
 import UsersForm from "~/forms/UsersForm.vue";
 
-interface Module {
-    name: string;
-    iconName: string;
-    formComponent?: any; // Vue component for the form, if applicable
-    specialColumnDefs?: {
-        [columnName: string]: (props: CellContext<unknown, unknown>) => unknown;
-    };
-}
-
 /**
  * IMPORTANT
  * 
@@ -35,7 +26,17 @@ const moduleList: Module[] = [
     { name: 'doors', iconName: 'fa-solid fa-door-closed', formComponent: DoorsForm },
     { name: 'readers', iconName: 'fa-solid fa-id-card' },
     { name: 'entry_exit', iconName: 'fa-solid fa-door-open' },
+    { name: 'example', iconName: 'fa-solid fa-cube' }
 ];
+
+interface Module {
+    name: string;
+    iconName: string;
+    formComponent?: any; // Vue component for the form, if applicable
+    specialColumnDefs?: {
+        [columnName: string]: (props: CellContext<unknown, unknown>) => unknown;
+    };
+}
 
 export function getAllModules(): Module[] {
     return moduleList;
