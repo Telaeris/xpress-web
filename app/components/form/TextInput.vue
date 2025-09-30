@@ -8,6 +8,8 @@
             class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-label"
             :value="model"
             @input="handleInput"
+            :min="min"
+            :max="max"
         />
     </div>
 </template>
@@ -19,6 +21,8 @@
         placeholder?: string | '';
         colWidth: ColumnWidthOptions;
         type?: string | 'text';
+        min?: string;
+        max?: string;
     }
 
     const props = defineProps<Props>();

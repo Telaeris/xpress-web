@@ -11,7 +11,7 @@
             <FormComboBox label="Ex. Select (Users)" v-model="formData.combo_1" 
                 placeholder="Select an option" colWidth="half" search="users"/>
             <FormTextInput label="Example Date" v-model="formData.date" 
-                colWidth="quarter" type="date"/>
+                colWidth="quarter" type="date" :max="'2025-09-30'"/>
         </FormGrid>
     </FormBase>
 </template>
