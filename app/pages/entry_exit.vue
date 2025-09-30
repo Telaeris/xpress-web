@@ -17,7 +17,7 @@
                 />
             </div>
             <div class="flex flex-col w-full min-h-0 min-w-0">
-                <div class="flex-1 flex p-4 flex-col gap-2">
+                <div class="flex-1 flex p-4 flex-col gap-2 min-h-0 min-w-0">
                     <div class="flex flex-row gap-4">
                         <FormLabel :label="occupancyLabel" />
                         <FormLabel :label="occupancyCardView ? 'Table View' : 'Card View'" 
@@ -37,7 +37,7 @@
                         v-else
                         :data="occupancyList"
                         :paginated="false"
-                        :columns="occupancyTableColumns"
+                        :columns="(occupancyTableColumns as ColumnDef<Record<string, any>, any>[])"
                         :sortable="false"
                         :has-more-data="false"
                     />
