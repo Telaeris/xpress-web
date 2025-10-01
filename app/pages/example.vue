@@ -12,11 +12,13 @@
                 placeholder="Select an option" colWidth="half" search="users"/>
             <FormTextInput label="Example Date" v-model="formData.date" 
                 colWidth="quarter" type="date" :max="'2025-09-30'"/>
-            <FormCheckboxGroup colWidth="half">
+            <FormCheckboxGroup colWidth="quarter">
                 <FormCheckbox label="Option 1" name="option_1" v-model="formData.option_1"/>
                 <FormCheckbox label="Option 2" name="option_2" v-model="formData.option_2"/>
             </FormCheckboxGroup>
-            <FormTabs :tabs="['Table', 'CheckBoxes', 'MultiSelect', 'Buttons']" :selectedIndex="0">
+            <FormComboBox label="MuliSelect Zones" colWidth="half" search="zones"
+                placeholder="Select Zones" multiple/>
+            <FormTabs :tabs="['Table', 'CheckBoxes', 'Buttons']" :selectedIndex="0">
                 <template #table>
                     <div class="col-span-full">
                         <TableInline 
@@ -35,9 +37,6 @@
                             <FormCheckbox label="Option 2" name="option_2" v-model="formData.option_2"/>
                         </FormCheckboxGroup>
                     </FormGrid>
-                </template>
-                <template #multiselect>
-                    !
                 </template>
                 <template #buttons>
                     <div class="flex gap-2">
