@@ -4,9 +4,11 @@
             type="checkbox" 
             :checked="model" 
             @change="model = !model" 
-            class="size-4 accent-primary bg-gray-100 border-gray-300 rounded focus:ring-primary"
+            class="size-4 accent-primary bg-gray-100 border-gray-300 rounded focus:ring-primary cursor-pointer"
         />
-        <label class="select-none">{{ props.label }}</label>
+        <label class="select-none hover:text-primary cursor-pointer"
+            @click="model = !model"
+        >{{ props.label }}</label>
     </div>
 </template>
 

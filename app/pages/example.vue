@@ -59,6 +59,10 @@
 <script setup lang="ts">
 import { type ColumnDef } from '@tanstack/vue-table';
 
+useHead({
+    title: 'Component Examples'
+});
+
 const formData = ref<Record<string, any>>({
     text_1: '',
     text_2: '',
