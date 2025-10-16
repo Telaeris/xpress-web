@@ -18,25 +18,16 @@
             </FormCheckboxGroup>
             <FormComboBox label="MuliSelect Zones" colWidth="half" search="zones"
                 placeholder="Select Zones" multiple/>
-            <FormTabs :tabs="['Table', 'CheckBoxes', 'Buttons']" :selectedIndex="0">
+            <FormTabs :tabs="['Table', 'Buttons']" :selectedIndex="0">
                 <template #table>
                     <div class="col-span-full">
                         <TableInline 
                             :data="tableData"
                             :columns="tableColumns"
-                            :sortable="false"
                             :paginated="false"
                             :has-more-data="false"
                         />
                     </div>
-                </template>
-                <template #checkboxes>
-                    <FormGrid>
-                        <FormCheckboxGroup colWidth="half">
-                            <FormCheckbox label="Option 1" name="option_1" v-model="formData.option_1"/>
-                            <FormCheckbox label="Option 2" name="option_2" v-model="formData.option_2"/>
-                        </FormCheckboxGroup>
-                    </FormGrid>
                 </template>
                 <template #buttons>
                     <div class="flex gap-2">

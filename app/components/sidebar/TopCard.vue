@@ -42,8 +42,8 @@
 
     const refMenu = ref([
         { icon: 'fa-solid fa-user', label: 'Profile', action: () => { console.log('Profile clicked'); }},
-        { icon: 'fa-solid fa-gear', label: 'Settings', action: () => { navigateTo('settings') } },
-        { icon: 'fa-solid fa-right-from-bracket', label: 'Logout', action: () => { navigateTo('login') } },
+        { icon: 'fa-solid fa-gear', label: 'Settings', action: () => { navigateTo('/settings') } },
+        { icon: 'fa-solid fa-right-from-bracket', label: 'Logout', action: () => { navigateTo('/login') } },
         { label: 'Change Language', action: switchLocaleBasedOnActive, icon: 'fa-solid fa-language' },
     ]);
 </script>

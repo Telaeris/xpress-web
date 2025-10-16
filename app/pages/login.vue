@@ -82,6 +82,9 @@ const handleLogin = async () => {
         parseResponse: JSON.parse,
     });
 
+    // get the CSRF token
+    await getCSRF();
+
     console.log(response);
     loading.value = false;
 

@@ -22,7 +22,7 @@ import { type ColumnDef, type TableOptionsWithReactiveData, type SortingState,
 const props = defineProps<{
     columns: ColumnDef<Record<string, any>, any>[],
     data: Record<string, any>[],
-    sortable: 'local' | 'remote' | false,
+    sortable?: boolean | false,
     paginated: boolean,
     hasMoreData: boolean,
 }>();
