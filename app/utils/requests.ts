@@ -14,16 +14,12 @@ export const apiFetch = ofetch.create({
         useLoader().stopLoading();
         // Handle global errors here
         if (response.status === 401) {
-            // For example, redirect to login page on unauthorized
-            navigateTo('/login');
-            return;
-        }
-
-        // handle CSRF token expiration
-        if (response.status === 419) {
-            await getCSRF();
-            // Retry the original request
-            await ofetch(request, options);
+            // redirect to login page on unauthorized
+            toast().error('Your session has expired. Redirecting to login...');
+            setTimeout(() => {
+                toast().clear();
+                navigateTo('/login');
+            }, 1000);
             return;
         }
 

@@ -39,11 +39,19 @@
             setLocale('en');
         }
     };
+    
+        const logout = async () => {
+            await apiFetch('/logout', {
+                method: 'POST',
+            });
+            useCSRF().clearToken();
+            navigateTo('/login');
+        }
 
     const refMenu = ref([
         { icon: 'fa-solid fa-user', label: 'Profile', action: () => { console.log('Profile clicked'); }},
         { icon: 'fa-solid fa-gear', label: 'Settings', action: () => { navigateTo('/settings') } },
-        { icon: 'fa-solid fa-right-from-bracket', label: 'Logout', action: () => { navigateTo('/login') } },
+        { icon: 'fa-solid fa-right-from-bracket', label: 'Logout', action: logout },
         { label: 'Change Language', action: switchLocaleBasedOnActive, icon: 'fa-solid fa-language' },
     ]);
 </script>

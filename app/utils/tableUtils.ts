@@ -25,11 +25,8 @@ interface ColumnResponse {
 }
 
 export const getTableData = async (moduleName: string, params: Object = {}) => {
-    const url: string = buildRelativeUrlWithParams(`core/${moduleName}/lists`, params);
-    const response = await $fetch<TableResponse>(url, {
-        method: 'GET',
-        parseResponse: JSON.parse,
-    });
+    const url: string = buildRelativeUrlWithParams(`${moduleName}/lists`, params);
+    const response = await apiFetch<TableResponse>(url);
     response.data = buildDataFromResponse(response.data as Array<Array<any>>, response.columns);
     response.defaultOrder = convertResponseOrder(response.defaultOrder as DefaultOrderResponse);
     return response;

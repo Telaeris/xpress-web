@@ -32,10 +32,6 @@ export const onFormMounted = (moduleName: string, formData: Ref<Record<string, a
 }
 
 /**
- * 
- */
-
-/**
  * Use this to define the base functionality of saving a form.
  */
 export const saveFormData = async (moduleName: string, formData: FormData) => {
@@ -90,10 +86,7 @@ export const isNewForm = () => {
 }
 
 export const getFormData = async(moduleName: string, id: string) => {
-    const response = await $fetch<FormResponse>(`/core/${moduleName}/${id}`, {
-        method: 'GET',
-        parseResponse: JSON.parse,
-    });
+    const response = await apiFetch<FormResponse>(`${moduleName}/${id}`);
     return response.results.details;
 }
 

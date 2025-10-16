@@ -13,4 +13,7 @@ export const toast = () => ({
     warning: (message: string) => {
         useToast().warning(message);
     },
+    clear: () => {
+        useToast().clear();
+    }
 });
