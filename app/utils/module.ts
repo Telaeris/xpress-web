@@ -1,33 +1,5 @@
 import type { CellContext } from "@tanstack/vue-table";
-import CompaniesForm from "~/forms/CompaniesForm.vue";
-import DoorsForm from "~/forms/DoorsForm.vue";
-import UsersForm from "~/forms/UsersForm.vue";
-
-/**
- * IMPORTANT
- * 
- * List of modules with their display names, icon names, and any special column definitions.
- * Add new modules here as needed.
- */
-const moduleList: Module[] = [
-    { name: 'users', iconName: 'fa fa-user', formComponent: UsersForm,
-        specialColumnDefs: {
-            photo: (props: CellContext<unknown, unknown>) => {
-                return h('img', {
-                    src: props.getValue() as string,
-                    alt: 'User Photo',
-                    class: 'size-10 rounded-full object-cover'
-                });
-            }
-        }
-    },
-    { name: 'companies', iconName: 'fa-solid fa-building', formComponent: CompaniesForm },
-    { name: 'zones', iconName: 'fa-solid fa-map' },
-    { name: 'doors', iconName: 'fa-solid fa-door-closed', formComponent: DoorsForm },
-    { name: 'readers', iconName: 'fa-solid fa-id-card' },
-    { name: 'entry_exit', iconName: 'fa-solid fa-door-open' },
-    { name: 'example', iconName: 'fa-solid fa-cube' }
-];
+import modulesConfig from "../../config/modules.config";
 
 interface Module {
     name: string;
@@ -39,11 +11,16 @@ interface Module {
 }
 
 export function getAllModules(): Module[] {
-    return moduleList;
+    return modulesConfig;
 }
 
-export function getModuleInfo(moduleName: string): Module | undefined {
-    return moduleList.find(m => m.name === moduleName);
+export const getModuleInfo = (moduleName: string): Module | undefined => {
+    return modulesConfig.find(m => m.name === moduleName);
+}
+
+export const getModuleIconName = (moduleName: string): string => {
+    const module = getModuleInfo(moduleName);
+    return module ? module.iconName : "";
 }
 
 export const getModuleDisplayName = (moduleName: string): string => {

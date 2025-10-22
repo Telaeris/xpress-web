@@ -59,5 +59,5 @@ export default defineNuxtConfig({
   ],
 
   ssr: false,
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt'],
 })

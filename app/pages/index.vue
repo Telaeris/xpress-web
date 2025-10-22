@@ -1,7 +1,3 @@
 <script lang="ts" setup>
-    definePageMeta({
-        middleware: [
-            'auth'
-        ]
-    })
+navigateTo('/login');
 </script>

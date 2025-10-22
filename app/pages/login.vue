@@ -82,6 +82,8 @@ const handleLogin = async () => {
         parseResponse: JSON.parse,
     });
 
+    useUserSidebarStore().setMenuItems((response as Record<string, any>).features);
+
     // get the CSRF token
     await getCSRF();
 
