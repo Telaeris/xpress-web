@@ -1,6 +1,6 @@
 <template>
     <TransitionRoot :show="$props.open">
-        <Dialog @close="$emit('close')">
+        <Dialog @close="$emit('close')" class="relative z-50">
             <TransitionChild
                 enter="duration-300 ease-out"
                 enter-from="opacity-0"
@@ -9,7 +9,7 @@
                 leave-from="opacity-100"
                 leave-to="opacity-0"
             >
-                <div class="fixed inset-0 bg-black/20 z-20" aria-hidden="true"></div>
+                <div class="fixed inset-0 bg-black/20" aria-hidden="true"></div>
             </TransitionChild>
             <div class="fixed inset-0 flex w-screen items-center justify-center">
                 <TransitionChild
@@ -20,7 +20,7 @@
                     leave-from="opacity-100 scale-100"
                     leave-to="opacity-0 scale-95"
                 >
-                    <DialogPanel class="w-md rounded-xl bg-white resize shadow-2xl z-30" v-slot="{ open }">
+                    <DialogPanel class="w-md rounded-xl bg-white resize shadow-2xl" v-slot="{ open }">
                         <DialogTitle 
                             class="text-2xl border-gray-300 p-4 pb-2"
                             :class="{ 'border-b': $props.bordered }"
