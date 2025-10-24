@@ -1,11 +1,11 @@
-interface UserSidebarMenuItem {
+export interface UserSidebarMenuItem {
     name: string
     vis: boolean
     module: boolean
-    kids?: UserSidebarMenuItem[]
+    kids: UserSidebarMenuItem[]
 }
 
-const useStore = defineStore('userSidebar', {
+export const useUserSidebarStore = defineStore('userSidebar', {
     state: () => ({
         menuItems: [] as UserSidebarMenuItem[]
     }),
@@ -15,12 +15,12 @@ const useStore = defineStore('userSidebar', {
         }
     },
     actions: {
-        setMenuItems(items: UserSidebarMenuItem[]) {
+        setMenuItems(items: UserSidebarMenuItem[], saveToServer = false) {
             let hasItems = this.menuItems.length > 0;
             console.log('Overriding sidebar menu items:', this.menuItems, 'with', items);
             this.menuItems = items;
             
-            if (!hasItems) return;
+            if (!hasItems || !saveToServer) return;
             formPost('/store_user_setting', {
                 body: {
                     resources: items
@@ -37,5 +37,3 @@ const useStore = defineStore('userSidebar', {
     },
     persist: true
 });
-
-export default useStore;

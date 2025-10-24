@@ -24,16 +24,14 @@ export const getModuleIconName = (moduleName: string): string => {
 }
 
 export const getModuleDisplayName = (moduleName: string): string => {
-    const { t } = useI18n();
     const module = getModuleInfo(moduleName);
-    return module ? t(module.name) : moduleName;
+    return module ? useNuxtApp().$i18n.t(module.name) : moduleName;
 }
 
 export const useModuleDisplayName = (moduleName: Ref<string>) => {
-    const { t } = useI18n();
     return computed(() => {
         const module = getModuleInfo(moduleName.value);
-        return module ? t(module.name) : moduleName.value;
+        return module ? useNuxtApp().$i18n.t(module.name) : moduleName.value;
     });
 }
 
